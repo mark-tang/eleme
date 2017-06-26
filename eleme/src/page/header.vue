@@ -91,14 +91,12 @@
 		.head_wrap{ 
 			flex-grow: 1;
 			font-size: 14px;
-			position:relative;			
-			z-index:2;
+			position:relative;	
 			padding:24px 12px 18px 24px;
 			font-size:0;			
 			display: flex;
 			background:rgba(0,0,0,0.2);				
-			.avatar{
-				z-index: 2; 
+			.avatar{				
 				position: relative;					
 				color: red;
 				img{
@@ -234,7 +232,6 @@
 					background: url(../assets/img/ico_close.png);
 				}
 			}
-
 		}
 	}
 </style>
