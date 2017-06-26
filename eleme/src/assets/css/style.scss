@@ -1,0 +1,129 @@
+/*
+ * Created by Tang on 2017/03/20.
+ */
+body{ margin:0; line-height:1.42857; color:#000; font-family:arial; font-size: 12px; background:#fff;}
+h1,h2,h3,h4,h5,h6,ul,ol,p,dl{ margin-top:0; margin-bottom:0;} h4,h5,h6{ font-size:1em;}  
+textarea, button, input, select, figure, figcaption {border: none;    
+    &:focus {outline: none;}
+}
+ul,ol{ padding-left:0; list-style:none;}  
+a{text-decoration:none;color:#000; }
+b, strong{font-weight: 700;}
+.fl{float: left;} 
+.fr{float: right;}
+.ellipsis{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.clearfix{ zoom:1;
+	&::after{ content:""; clear: both;; display:block; height: 0; }
+}
+.h100{height:100%;}
+html,body{ overflow:hidden;}
+
+*{ box-sizing: border-box; }
+.wrap{position: relative;}
+$blue: #3190e8;  
+$bc: #e4e4e4;
+$fc:#fff;
+
+/* mixins */
+// 背景图片地址和大小
+@mixin bis($url) { 
+	background-image: url($url);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+@mixin borderRadius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+//定位全屏
+@mixin allcover{
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+//定位上下左右居中
+@mixin center {  
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin ct {  
+	position: absolute;
+	top: 50%;
+    transform: translateY(-50%);
+}
+
+//定位上下居中
+@mixin cl {  
+	position: absolute;
+	left: 50%;
+    transform: translateX(-50%);
+}
+
+//宽高
+@mixin wh($width, $height){
+	width: $width;
+	height: $height;
+}
+
+//字体大小、行高、字体
+@mixin font($size, $line-height, $family: 'Microsoft YaHei') {  
+	font: #{$size}/#{$line-height} $family;
+}
+
+//字体大小，颜色
+@mixin sc($size, $color){
+	font-size: $size;
+	color: $color;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between){
+	display: flex;
+	justify-content: $type;
+
+}
+
+@mixin bg-image($url){
+  background-image:url($url + "@2x.png");
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio){
+    background-image:url($url + "@3x.png");
+  }
+}
+/* common style */
+.main{
+	position:absolute; 
+	top:174px; 
+	bottom:0;
+	width:100%;	
+	overflow:hidden;
+}
+.split{			
+	background: #f3f5f7;
+	border-top: 1px solid #dbdee0;
+	height: 16px;	
+}
+.ico_enter_s{ 
+		width: 6px;
+		height: 6px; 
+		border-top:1px solid #fff; 
+		border-left:1px solid #fff; 
+		transform: rotate(135deg); 
+		display: inline-block;  
+		vertical-align:middle; 
+		margin-right: 3px;
+}
+.ico_enter_m{
+	@extend .ico_enter_s;
+	width: 8px;
+	height: 8px; 
+}
+
